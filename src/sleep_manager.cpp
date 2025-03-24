@@ -23,9 +23,9 @@ void sleep_for_seconds(long number_of_seconds, int nbr_blinks){
       if (i % interval_between_sleep_LED_blink_seconds == 0){
         for (int j=0; j<nbr_blinks; j++){
           pinMode(LED, OUTPUT);
-          digitalWrite(LED, HIGH);
-          delay(duration_sleep_LED_blink_milliseconds);
           digitalWrite(LED, LOW);
+          delay(duration_sleep_LED_blink_milliseconds);
+          digitalWrite(LED, HIGH);
           delay(duration_sleep_LED_blink_milliseconds);
         }
       }
@@ -69,7 +69,7 @@ void prepare_to_sleep(void){
   turn_iridium_off();
 
   /* digitalWrite(busVoltageMonEN, LOW); */
-  digitalWrite(LED, LOW);
+  digitalWrite(LED, HIGH);
 
 # ifndef DISABLE_ALL_THERMISTOR
   turn_thermistors_off();

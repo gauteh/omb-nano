@@ -9,8 +9,8 @@ bool IMU_Manager::start_IMU(){
   Serial.println(F("start the IMU"));
   wdt.restart();
 
-  pinMode(LED, OUTPUT);
-  digitalWrite(LED, LOW);
+  pinMode(LED, g_AM_HAL_GPIO_OUTPUT_4); // Make the LED pin an output
+  digitalWrite(LED, HIGH);
   pinMode(IMUPwr, g_AM_HAL_GPIO_OUTPUT_12); // 12 mA
   digitalWrite(IMUPwr, HIGH);
   delay(500);
@@ -87,8 +87,8 @@ bool IMU_Manager::start_IMU(){
 }
 
 bool IMU_Manager::stop_IMU(){
-  pinMode(LED, OUTPUT);
-  digitalWrite(LED, LOW);
+  pinMode(LED, g_AM_HAL_GPIO_OUTPUT_4); // Make the LED pin an output
+  digitalWrite(LED, HIGH);
 
    disableBurstMode();
    delay(100);
@@ -445,11 +445,11 @@ bool IMU_Manager::get_new_reading(float & acc_N_inout, float & acc_E_inout, floa
                    ){
    if (blink_when_use_IMU){
      if (counter_nbr_cycles_LED_off == 0){
-       digitalWrite(LED, LOW);
+       digitalWrite(LED, HIGH);
      }
      if (counter_nbr_cycles_LED_off >= number_update_between_blink){
        counter_nbr_cycles_LED_off = -1;
-       digitalWrite(LED, HIGH);
+       digitalWrite(LED, LOW);
      }
    }
    counter_nbr_cycles_LED_off += 1;
