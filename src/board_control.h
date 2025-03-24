@@ -17,7 +17,7 @@
 #define busVoltagePin      13 // Bus voltage divided by 3 (Analog in)
 #define iridiumSleep       35 // 17 // Iridium 9603N ON/OFF (sleep) pin: pull high to enable the 9603N
 #define iridiumNA          32 // Input for the Iridium 9603N Network Available
-#define LED                19 // White LED
+#define LED                10 // White LED
 /* #define iridiumPwrEN       35 // ADM4210 ON: pull high to enable power for the Iridium 9603N */
 #define gnssEN             38 // GNSS Enable: pull low to enable power for the GNSS (via Q2)
 /* #define superCapChgEN      27 // LTC3225 super capacitor charger: pull high to enable the super capacitor charger */
