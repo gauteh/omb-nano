@@ -4,6 +4,10 @@
 #include "Arduino.h"
 #include "board_control.h"
 
+#ifndef ON_VERSION
+#define ON_VERSION "0.2.1"
+#endif
+
 //--------------------------------------------------------------------------------
 // hardware configuration
 
